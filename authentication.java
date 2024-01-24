@@ -31,10 +31,12 @@ public class Authenticator {
     }
  
     private static boolean authenticateUser(String username, String password) {
-        if (users.containsKey(username)) {
-            String storedHashedPassword = users.get(username);
+       for (Map.Entry<String, String> entry : users.entrySet()) {
+        if (entry.getKey().equals(username)) {
+            String storedHashedPassword = entry.getValue();
             return BCrypt.checkpw(password, storedHashedPassword);
         }
+    }
         return false;
     }
 }
