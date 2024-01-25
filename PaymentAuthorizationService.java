@@ -9,7 +9,7 @@ public class PaymentAuthorizationService {
     private AccountRepository accountRepository;
 
     @Autowired
-    public PaymentRepository paymentRepository;
+    private PaymentRepository paymentRepository;
 
     @Transactional
     public void authorizePayment(String accountNumber, double amount) {
@@ -24,7 +24,7 @@ public class PaymentAuthorizationService {
         // Create a payment object and save it to the database
         Payment payment = new Payment();
         payment.setAccount(account);
-        //payment.setAmount(amount);
+        payment.setAmount(amount);
         payment.setStatus(PaymentStatus.AUTHORIZED);
         paymentRepository.save(payment);
 
