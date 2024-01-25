@@ -16,6 +16,30 @@ public class Account {
 
     // Constructors, getters and setters, other fields, and methods as needed
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     // Example method to deduct an amount from the balance
     public void deductAmount(double amount) {
         if (amount > 0 && amount <= balance) {
